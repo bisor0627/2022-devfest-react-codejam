@@ -1,5 +1,17 @@
+import { AppScreen } from '@stackflow/plugin-basic-ui';
+import AppBar from '@stackflow/plugin-basic-ui/dist/components/AppBar';
 import React from 'react';
+import { DetailPageBackButton } from 'src/components/common/Stackflow';
+import { ProductInterface, UserInterface } from 'src/schemas/Product';
+import { getProductData } from 'src/services/product';
+import { getUserData } from 'src/services/user';
+import { useFlow } from 'src/utils/stackflow';
 import styled from 'styled-components';
+import OtherItems from './components/OtherItems';
+import { OtherItem } from './components/OtherItems/styled';
+import ProductDetail from './components/ProductDetail';
+import { ProductDetailWrapper } from './components/ProductDetail/styled';
+import UserProfile from './components/UserProfile';
 
 type DetailParams = {
   params: {
@@ -8,7 +20,33 @@ type DetailParams = {
 };
 
 const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
-  return <ProductImageWrapper></ProductImageWrapper>;
+  const {pop} = useFlow();
+  const [product, setProduct] = React.useState<ProductInterface>();
+  const [user, setUser] = React.useState<UserInterface>(); 
+  const loadData =async () => {
+    const {data} = await getProductData(Number(id));
+
+    setProduct(data);
+    const {data: userData} = await getUserData(data.userID);
+
+    setUser(userData);
+  }
+
+  React.useEffect(() => {
+    loadData()
+  }, [])
+  return <AppScreen appBar={{backButton: {
+    render: ()=><DetailPageBackButton onClick={pop}></DetailPageBackButton>
+  }}}>
+    {product && user && (<section>
+      <ProductImageWrapper>
+        <img src={product.img} alt="productImage"/>
+      </ProductImageWrapper>
+<UserProfile {...user}/>
+      <ProductDetail {...product}/>
+       <OtherItems  userName={user.userName} other={user.other}/> 
+    </section>)}
+   </AppScreen>;
 };
 
 export default DetailPage;
