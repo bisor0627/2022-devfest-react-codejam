@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/2022-devfest-react-codejam/static/css/main.3bb28835.css",
-    "main.js": "/2022-devfest-react-codejam/static/js/main.6dc989f9.js",
+    "main.js": "/2022-devfest-react-codejam/static/js/main.657e73ba.js",
     "static/js/787.c890882a.chunk.js": "/2022-devfest-react-codejam/static/js/787.c890882a.chunk.js",
     "static/media/chats.svg": "/2022-devfest-react-codejam/static/media/chats.48a0e35687daaf06ca7567f5768643da.svg",
     "static/media/control.svg": "/2022-devfest-react-codejam/static/media/control.ad16cbca0e03aec4bcecb590c6cb9745.svg",
@@ -15,11 +15,11 @@
     "static/media/chevron.svg": "/2022-devfest-react-codejam/static/media/chevron.94d456bc0192510ce19c941c85686eff.svg",
     "static/media/sell.svg": "/2022-devfest-react-codejam/static/media/sell.83a108f99314f0a04f95dc1d7e08b3bd.svg",
     "main.3bb28835.css.map": "/2022-devfest-react-codejam/static/css/main.3bb28835.css.map",
-    "main.6dc989f9.js.map": "/2022-devfest-react-codejam/static/js/main.6dc989f9.js.map",
+    "main.657e73ba.js.map": "/2022-devfest-react-codejam/static/js/main.657e73ba.js.map",
     "787.c890882a.chunk.js.map": "/2022-devfest-react-codejam/static/js/787.c890882a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bb28835.css",
-    "static/js/main.6dc989f9.js"
+    "static/js/main.657e73ba.js"
   ]
 }
